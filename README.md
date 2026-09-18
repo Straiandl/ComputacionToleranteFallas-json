@@ -1,0 +1,73 @@
+# Práctica Integrada: Monitoreo de Errores y Restauración de Estado
+
+##  Descripción General
+Este proyecto implementa un patrón completo de **Resiliencia y Tolerancia a Fallas** en Python. Combina dos pilares fundamentales en el diseño de software confiable:
+
+1. **Rastreo y Monitoreo de Errores en Tiempo Real (Sentry):** Captura las excepciones producidas por defectos (*Faults*) para notificarlas a los desarrolladores sin interrumpir la ejecución del sistema (*Evitando la Caída / Failure*).
+2. **Punto de Control y Restauración de Estado (JSON Checkpointing):** Almacena de forma persistente el progreso de las transacciones para que, en caso de un reinicio o fallo del sistema, este pueda reanudarse exactamente desde el punto donde se quedó sin duplicar operaciones ni perder datos.
+
+---
+
+##  Objetivos
+* Demostrar la mitigación de la cadena **Fault $\rightarrow$ Error $\rightarrow$ Failure**.
+* Implementar mecanismos de persistencia liviana y segura mediante archivos **JSON** (evitando los riesgos de seguridad asociados a *pickle*).
+* Asegurar la **idempotencia** en el procesamiento de transacciones (capacidad de reejecutar el script sin alterar el estado final).
+
+---
+
+##  Requisitos Previos
+
+Para ejecutar la aplicación es necesario contar con Python 3.x y el SDK oficial de Sentry.
+
+```bash
+pip install sentry-sdk
+```
+
+*(Opcional): Si deseas ver el evento en tiempo real en la nube, configura una cuenta en [Sentry.io](https://sentry.io/) e ingresa tu DSN en la función `sentry_sdk.init()`.*
+
+---
+
+##  Evidencias de la Práctica (Capturas de Pantalla)
+
+> **Nota para el alumno:** Sube tus capturas a una carpeta llamada `img/` dentro de tu repositorio y verifica que los nombres de los archivos coincidan.
+
+### 1. Primera Ejecución y Detección de Falla
+*Captura de la consola ejecutando el script donde se observa el procesamiento inicial, el registro del checkpoint en JSON y la intercepción de la división por cero:*
+
+![Primera Ejecución](./img/captura_primera_ejecucion.png)
+
+### 2. Estructura del Archivo de Estado (`estado_sistema.json`)
+*Captura del archivo JSON generado automáticamente para persistir el último ID procesado:*
+
+![Archivo JSON de Checkpoint](./img/captura_json_checkpoint.png)
+
+### 3. Segunda Ejecución (Reinicio y Restauración de Estado)
+*Captura de la consola al reejecutar el programa, mostrando la omisión automática de las tareas previamente procesadas:*
+
+![Reejecución y Restauración](./img/captura_restauracion_estado.png)
+
+### 4. Ejemplo del json generado
+![Json creado]()
+
+---
+
+##  Cómo Ejecutar la Práctica
+
+1. Abre una terminal en la carpeta del proyecto.
+2. Ejecuta el script por primera vez:
+   ```bash
+   python main.py
+   ```
+3. Verifica la creación del archivo `estado_sistema.json`.
+4. Vuelve a ejecutar el script para comprobar cómo se restaura el estado y se omiten las tareas previas:
+   ```bash
+   python main.py
+   ```
+
+---
+
+##  Información del Estudiante
+
+* **Alumno:** [De la Paz Mendoza Ian Alexandro]
+* **Materia:** [Computacion tolerante a fallas]
+* **Fecha:** 18 de Septiembre 2026
