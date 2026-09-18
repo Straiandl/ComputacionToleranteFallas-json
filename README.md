@@ -32,17 +32,14 @@ pip install sentry-sdk
 > **Nota para el alumno:** Sube tus capturas a una carpeta llamada `img/` dentro de tu repositorio y verifica que los nombres de los archivos coincidan.
 
 ### 1. Primera Ejecución y Detección de Falla
-*Captura de la consola ejecutando el script donde se observa el procesamiento inicial, el registro del checkpoint en JSON y la intercepción de la división por cero:*
 
 ![Primera Ejecución](https://github.com/Straiandl/ComputacionToleranteFallas-json/blob/0192bd6a35ffd33b23b6eb3dfd72a55b1ce215d8/Cap1Json.png)
 
 ### 2. Estructura del Archivo de Estado (`estado_sistema.json`)
-*Captura del archivo JSON generado automáticamente para persistir el último ID procesado:*
 
-![Archivo JSON de Checkpoint](./img/captura_json_checkpoint.png)
+![Archivo JSON de Checkpoint](https://github.com/Straiandl/ComputacionToleranteFallas-json/blob/ce7b9f2715b2f480cb3f0048d0ab030f52ab0395/Cap2Json.png)
 
 ### 3. Segunda Ejecución (Reinicio y Restauración de Estado)
-*Captura de la consola al reejecutar el programa, mostrando la omisión automática de las tareas previamente procesadas:*
 
 ![Reejecución y Restauración](./img/captura_restauracion_estado.png)
 
