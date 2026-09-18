@@ -39,12 +39,8 @@ pip install sentry-sdk
 
 ![Archivo JSON de Checkpoint](https://github.com/Straiandl/ComputacionToleranteFallas-json/blob/ce7b9f2715b2f480cb3f0048d0ab030f52ab0395/Cap2Json.png)
 
-### 3. Segunda Ejecución (Reinicio y Restauración de Estado)
-
-![Reejecución y Restauración](./img/captura_restauracion_estado.png)
-
-### 4. Ejemplo del json generado
-![Json creado]()
+### 3. Ejemplo del json generado
+![Json creado](https://github.com/Straiandl/ComputacionToleranteFallas-json/blob/c320c05c42d9a27ba34f5561524a6eaf44b3c642/Cap3Json.png)
 
 ---
 
