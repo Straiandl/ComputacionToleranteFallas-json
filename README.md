@@ -34,7 +34,7 @@ pip install sentry-sdk
 ### 1. Primera Ejecución y Detección de Falla
 *Captura de la consola ejecutando el script donde se observa el procesamiento inicial, el registro del checkpoint en JSON y la intercepción de la división por cero:*
 
-![Primera Ejecución](./img/captura_primera_ejecucion.png)
+![Primera Ejecución](https://github.com/Straiandl/ComputacionToleranteFallas-json/blob/0192bd6a35ffd33b23b6eb3dfd72a55b1ce215d8/Cap1Json.png)
 
 ### 2. Estructura del Archivo de Estado (`estado_sistema.json`)
 *Captura del archivo JSON generado automáticamente para persistir el último ID procesado:*
